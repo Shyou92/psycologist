@@ -1,0 +1,177 @@
+@import '../../variables/variables.scss';
+
+.footer {
+  width: 100%;
+  background-color: #2b6684;
+}
+
+.container {
+  @extend %flex;
+  @include adaptivePadding(padding, 150, 0, 50, 0);
+  @media screen and (max-width: $_1024) {
+    text-align: center;
+    flex-direction: column;
+    row-gap: 50px;
+    width: 100%;
+  }
+}
+
+.footerHeader {
+  @extend %fz-36-35;
+  color: #fff;
+  @include adaptive(margin-bottom, 50, 16);
+}
+
+.subheader {
+  color: #fff;
+  opacity: 0.8;
+  font-family: $font_Nexa;
+  @extend %fz-24-10;
+  @include adaptive(margin-bottom, 60, 30);
+}
+
+.footerList {
+  @include adaptive(width, 400, 278);
+}
+
+.socialContainer {
+  @include adaptive(width, 400, 278);
+  @media screen and (max-width: $_1024) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.feedback {
+  @include adaptive(width, 400, 278);
+}
+
+.social {
+}
+.centerList {
+  @extend %flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 7, 10);
+  align-items: flex-start;
+  @media screen and (max-width: $_1024) {
+    align-items: center;
+  }
+}
+.socialNavList {
+  @extend %flex;
+  justify-content: flex-start;
+  @include adaptive(column-gap, 45, 36);
+}
+.socialNavItem {
+  @extend %fz-20-35;
+}
+.navItemLink {
+  @extend %fonts;
+  @extend %fz-20-35;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  color: rgba(255, 255, 255, 0.8);
+
+  &:hover {
+    color: #fff;
+    transition: 0.5s;
+  }
+
+  @media screen and (max-width: 780px) {
+    text-align: start;
+  }
+}
+
+.image {
+  @include adaptive(width, 64, 48);
+  @include adaptive(width, 64, 48);
+}
+
+.text {
+  @extend %fonts;
+  @extend %fz-18-23;
+  color: $secondaryColor;
+  @include adaptive(margin-bottom, 37, 50);
+}
+
+.textLink {
+  color: #fff;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.7s;
+  }
+}
+
+.like {
+  background: #fdfdfd;
+  border-radius: 10px;
+  @extend %flex;
+  justify-content: center;
+  @include adaptivePadding(padding, 26, 35, 30, 48);
+}
+
+.likeWrapper {
+  @extend %flex;
+  @include adaptive(column-gap, 25, 0);
+  @media screen and (max-width: $_1024) {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 14px;
+  }
+}
+
+.likeContainer {
+  @media screen and (max-width: $_1024) {
+    margin-bottom: 14px;
+  }
+}
+
+.likeText {
+  text-align: end;
+  position: relative;
+  @extend %fonts;
+  @extend %fz-20-25;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  color: $mainColor;
+  @include adaptive(padding-left, 28, 26);
+  @media screen and (max-width: $_1024) {
+    margin-bottom: 7px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    @include adaptive(width, 21, 16);
+    @include adaptive(height, 21, 16);
+    background-image: url(../Footer/images/Like.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include adaptive(top, 0, 0);
+    @include adaptive(left, 0, 0);
+  }
+}
+
+.likeCounter {
+  @extend %fonts;
+  @extend %fz-18-23;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  color: $mainColor;
+  opacity: 0.6;
+  text-align: left;
+}
+
+.likeButton {
+  height: 52px;
+  width: 183px;
+  @extend %flex;
+  align-items: stretch;
+  justify-content: center;
+  button {
+    width: 100%;
+    padding: 0;
+    @extend %fonts;
+    @extend %fz-18-27;
+  }
+}

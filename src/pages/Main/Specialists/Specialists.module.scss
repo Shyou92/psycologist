@@ -1,0 +1,143 @@
+@import '../../../variables/variables.scss';
+
+.specialists {
+  color: $mainColor;
+  @extend %fonts;
+  background-color: $backgroundListColor;
+}
+.container {
+  @extend %flex;
+  flex-direction: column;
+  @include adaptivePadding(padding, 150, 0, 50, 0);
+}
+
+%listItem {
+  content: '';
+  position: absolute;
+  @include adaptive(width, 52, 35);
+  @include adaptive(height, 52, 35);
+  background-position: center;
+  background-size: contain;
+  top: 0;
+  left: 0;
+}
+
+.headerWrapper {
+  @include adaptivePadding(margin, 150, 0, 50, 0);
+  width: 100%;
+}
+
+.header {
+  @include adaptive(margin-bottom, 150, 20);
+  span {
+    color: #98c1c5;
+  }
+}
+
+.subheader {
+  text-align: center;
+  color: #98c1c5;
+}
+
+.wrapper {
+  width: 100%;
+  @extend %flex;
+  align-items: flex-start;
+  @include adaptive(margin-bottom, 150, 50);
+  @include adaptive(column-gap, 263, 0);
+  @media screen and (max-width: $_768) {
+    row-gap: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.imgWrapper {
+  margin: 0;
+  padding: 0;
+  @extend %flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 40, 0);
+  max-width: 300px;
+  @media screen and (max-width: $_768) {
+    flex-direction: row-reverse;
+    column-gap: 33px;
+  }
+}
+.img {
+  @include adaptive(width, 300, 74);
+  flex: 1 1 100%;
+}
+.text {
+  font-family: $font_Nexa;
+  @extend %fz-36-40;
+  flex: 0 1 auto;
+}
+
+.buttonWrapper {
+  @include adaptive(margin-bottom, 50, 15);
+}
+
+.list {
+  width: 100%;
+  position: relative;
+  @extend %flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 100, 30);
+  li {
+    width: 100%;
+    @include adaptive(padding-left, 49, 40);
+  }
+}
+
+.listItemEdu {
+  &::before {
+    @extend %listItem;
+    background: url('./images/Education.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.listItemInter {
+  &::before {
+    @extend %listItem;
+    background: url('./images/Interview.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.listItemStudy {
+  &::before {
+    @extend %listItem;
+    background: url('./images/Study.svg');
+    background-repeat: no-repeat;
+
+    background-position: center;
+  }
+}
+
+.listItemExp {
+  &::before {
+    @extend %listItem;
+    background: url('./images/Experience.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.listHeader {
+  @extend %fonts;
+  @extend %fz-36-40;
+  margin-bottom: calc(5px + 19 * ((100vw - 320px) / 1556));
+}
+
+.listText {
+  @extend %fonts;
+  @extend %fz-24-12;
+}
+
+.confidential {
+  font-family: $font_Nexa;
+  @extend %fz-36-40;
+}

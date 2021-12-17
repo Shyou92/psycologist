@@ -1,0 +1,112 @@
+@import '../../../variables/variables.scss';
+
+.background {
+  width: 100%;
+  position: absolute;
+  z-index: -5;
+}
+
+.spec {
+  @extend %fonts;
+  color: $mainColor;
+  width: 100%;
+}
+.specContainer {
+  margin: 0 auto;
+  max-width: 1920px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    padding-top: 150px;
+    @include adaptive(width, 1920, 403);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./images/Lady-2.svg');
+    background-size: contain;
+    background-position-y: 150px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+.container {
+  @extend %flex;
+  flex-direction: column;
+  @include adaptivePadding(padding, 150, 0, 50, 0);
+}
+
+.backgroundLine {
+  // background-color: $mainColor;
+  width: 100%;
+
+  @include adaptive(height, 312, 102);
+  position: relative;
+  z-index: -1;
+  // background-image: url('./images/Vector190.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.headerWrap {
+  @include adaptive(margin-bottom, 566, 88);
+}
+
+.headerMain {
+  color: $mainColor;
+  text-align: left;
+  @include adaptive(width, 862, 262);
+  @include adaptive(margin-bottom, 30, 14);
+}
+
+.subheader {
+  @extend %fonts;
+  @extend %fz-36-40-12;
+  font-weight: normal;
+  @include adaptive(width, 670, 242);
+  color: $secondaryColor;
+  @include adaptive(margin-bottom, 50, 16);
+}
+
+.text {
+  font-family: $font_Nexa;
+  @extend %fz-36-40-12;
+}
+
+.buttonWrapper {
+  @extend %flex;
+  @include adaptive(column-gap, 20, 0);
+  @include adaptive(width, 800, 175);
+  @media screen and (max-width: $_768) {
+    flex-direction: column-reverse;
+    row-gap: 10px;
+  }
+}
+
+.buttonContainer {
+  color: #fff;
+  @extend %flex;
+  @include adaptive(column-gap, 90, 13);
+  div {
+    @extend %flex;
+    justify-content: center;
+    flex-direction: column;
+    @include adaptive(row-gap, 15, 4);
+    @include adaptive(width, 560, 132);
+    @include adaptive(height, 180, 57);
+    @include adaptive(border-radius, 10, 5);
+    background-color: $secondaryColor;
+  }
+}
+
+.info {
+  @extend %fz-48-14;
+  font-weight: 600;
+}
+
+.infoSub {
+  @extend %fz-24-8;
+}
